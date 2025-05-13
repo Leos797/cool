@@ -1,0 +1,37 @@
+//Zadanie 5
+public class MainB {
+    public static void main(String[] args) {
+        BankoweKonto konto = new BankoweKonto("Jakub Napora", 1000.0);
+        konto.wplac(100.0);
+        konto.wyplac(75.0);
+        konto.wyplac(2200.0);
+        System.out.println("Saldo: " + konto.pobierzSaldo());
+        System.out.println("Właściciel:" + konto.getWlasciciel());
+    }
+}
+class BankoweKonto {
+    private String wlasciciel;
+    private double saldo;
+    public BankoweKonto(String wlasciciel, double saldo) {
+        this.wlasciciel = wlasciciel;
+        this.saldo = saldo;
+    }
+    public void wplac(double kwota) {
+        if (kwota > 0) {
+            saldo += kwota;
+        }
+    }
+    public void wyplac(double kwota) {
+        if (kwota <= saldo) {
+            saldo -= kwota;
+        } else {
+            System.out.println("Błąd: niewystarczające saldo");
+        }
+    }
+    public double pobierzSaldo() {
+        return saldo;
+    }
+    public String getWlasciciel() {
+        return wlasciciel;
+    }
+}

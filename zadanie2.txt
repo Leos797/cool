@@ -1,0 +1,53 @@
+//Zadanie 2
+class Main {
+    public static void main(String[] args) {
+        Prostokat p1 = new Prostokat();
+        System.out.println("Pole bez jednostki: " + p1.obliczPole());
+        System.out.println(p1.obliczPole("cm"));
+        Prostokat p2 = new Prostokat(4.0, 6.0);
+        System.out.println("Pole bez jednostki: " + p2.obliczPole());
+        System.out.println(p2.obliczPole("m"));
+    }
+}
+class Prostokat {
+    private double szerokosc;
+    private double wysokosc;
+
+    public Prostokat() {
+        this.szerokosc = 1.0;
+        this.wysokosc = 1.0;
+    }
+    public Prostokat(double szerokosc, double wysokosc) {
+        this.szerokosc = szerokosc;
+        this.wysokosc = wysokosc;
+    }
+    public double getSzerokosc() {
+        return szerokosc;
+    }
+    public void setSzerokosc(double szerokosc) {
+        this.szerokosc = szerokosc;
+    }
+    public double getWysokosc() {
+        return wysokosc;
+    }
+    public void setWysokosc(double wysokosc) {
+        this.wysokosc = wysokosc;
+    }
+    public double obliczPole() {
+        return szerokosc * wysokosc;
+    }
+    public String obliczPole(String jednostka) {
+        double pole = obliczPole();
+        return "Pole: " + pole + " " + jednostka + "2";
+    }
+    class Main {
+        public static void main(String[] args) {
+            Prostokat p1 = new Prostokat();
+            System.out.println("Pole bez jednostki: " + p1.obliczPole());
+            System.out.println(p1.obliczPole("cm"));
+            Prostokat p2 = new Prostokat(4.0, 6.0);
+            System.out.println("Pole bez jednostki: " + p2.obliczPole());
+            System.out.println(p2.obliczPole("m"));
+        }
+    }
+}

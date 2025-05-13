@@ -1,0 +1,55 @@
+//Zadanie 4
+public class MainS {
+    public static void main(String[] args) {
+        Student s1 = new Student("Jakub", "Wiśniewski", "s3322", 1.7);
+        Student s2 = new Student("Jakub", "Napora", "s2233");
+
+        s1.wypiszDane();
+        s2.wypiszDane();
+
+        s2.setSrednia(3.5);
+        s2.wypiszDane();
+    }
+}
+class Student {
+    private String imie;
+    private String nazwisko;
+    private String numerIndeksu;
+    private double srednia;
+    public Student(String imie, String nazwisko, String numerIndeksu, double srednia) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.numerIndeksu = numerIndeksu;
+        this.srednia = srednia;
+    }
+    public Student(String imie, String nazwisko, String numerIndeksu) {
+        this(imie, nazwisko, numerIndeksu, 0.0);
+    }
+    public String getImie() {
+        return imie;
+    }
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+    public String getNazwisko() {
+        return nazwisko;
+    }
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+    public String getNumerIndeksu() {
+        return numerIndeksu;
+    }
+    public void setNumerIndeksu(String numerIndeksu) {
+        this.numerIndeksu = numerIndeksu;
+    }
+    public double getSrednia() {
+        return srednia;
+    }
+    public void setSrednia(double srednia) {
+        this.srednia = srednia;
+    }
+    public void wypiszDane() {
+        System.out.println(imie + " " + nazwisko + " Indeks: " + numerIndeksu + " Średnia: " + srednia);
+    }
+}

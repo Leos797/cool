@@ -1,0 +1,42 @@
+//Zadanie 3
+public class MainP {
+    public static void main(String[] args) {
+        Produkt p = new Produkt("Chleb", 3.5, 10);
+        p.wyswietlInformacje();
+        p.setCena(-1);
+        p.setIlosc(-2);
+        p.setCena(2.0);
+        p.setIlosc(11);
+        p.wyswietlInformacje();
+    }
+}
+class Produkt {
+    private String nazwa;
+    private double cena;
+    private int ilosc;
+    public Produkt(String nazwa, double cena, int ilosc) {
+        this.nazwa = nazwa;
+        setCena(cena);
+        setIlosc(ilosc);
+    }
+    public void setCena(double cena) {
+        if (cena < 0) {
+            System.out.println("Błąd: nie można ustawić wartości ujemnej");
+        } else {
+            this.cena = cena;
+        }
+    }
+    public void setIlosc(int ilosc) {
+        if (ilosc < 0) {
+            System.out.println("Błąd: nie można ustawić wartości ujemnej");
+        } else {
+            this.ilosc = ilosc;
+        }
+    }
+    public void wyswietlInformacje() {
+        System.out.println("Nazwa: " + nazwa);
+        System.out.println("Cena: " + cena + " zł");
+        System.out.println("Ilość: " + ilosc + " szt.");
+        System.out.println();
+    }
+}
